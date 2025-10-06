@@ -23,3 +23,10 @@ export async function handler(e, context) {
     }
   }
 }
+
+if (e.httpMethod !== "POST") {
+    return {
+        statusCode: 405,
+        body: JSON.stringify({ error: "Method Not Allowed" }),
+    };
+}
