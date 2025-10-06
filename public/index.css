@@ -64,6 +64,8 @@ textarea::placeholder{
 .input-container{
     display: flex;  
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 button{
@@ -77,6 +79,6 @@ button{
     width: 90%;
     max-width: 322px;   
     display: block;
-    margin:2.4375em auto 1em;
+    margin:1.5em auto 1em;
     cursor: pointer;
 }
