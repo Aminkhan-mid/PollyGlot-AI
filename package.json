@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "pollyglot-ai",
+  "version": "1.0.0",
+  "description": "An app that uses AI to  help you translate sentences into other languages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aminkhan-mid/PollyGlot-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aminkhan-mid/PollyGlot-AI/issues"
+  },
+  "homepage": "https://github.com/Aminkhan-mid/PollyGlot-AI#readme",
+  "dependencies": {
+    "@google/genai": "^1.22.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}
