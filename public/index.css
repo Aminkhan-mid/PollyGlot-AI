@@ -4,9 +4,6 @@ margin: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: sans-serif, Arial, Helvetica;
-}
 
 header{
     background-repeat: no-repeat;
@@ -19,5 +16,9 @@ header{
 }
 
 header h1{
+    font-family: 'Big Shoulders Text', sans-serif;
     color: #32CD32;
+}
+header p{
+font-family: 'Poppins', sans-serif;                                                
 }
