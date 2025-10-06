@@ -60,11 +60,18 @@ textarea{
     border-radius: 0.5em;
     border: none;
     background-color: #eff0f4;
+    font-size: 1rem;
+    color: black;
 }
 textarea::placeholder{
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     color: #333333;
+    margin-top: 6px;
+}
+textarea:focus{
+    border: none;
+    outline: none;
 }
 
 .radio-container{
@@ -73,8 +80,6 @@ textarea::placeholder{
     justify-content: center;
     align-items: flex-start;
     gap: 1em;
-    width: fit-content;
-    margin: 0 auto;
     padding: 1em;
 }
 .radio-container label{
