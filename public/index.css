@@ -119,3 +119,18 @@ button{
     margin:1.5em auto 1em;
     cursor: pointer;
 }
+
+.aiResponse{
+    width: 90%;
+    max-width: 317px;
+    height: 118px;
+    display: block;
+    margin: 0 auto;
+    padding: 1em;
+    resize: none;
+    border-radius: 0.5em;
+    border: none;
+    background-color: #eff0f4;
+    font-size: 1rem;
+    color: black;
+}

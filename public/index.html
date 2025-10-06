@@ -24,13 +24,13 @@
     </header>
 
     <main>
-        <p>Text to translate 👇🏼</p>
+        <p id="origianText">Text to translate 👇🏼</p>
 
         <textarea name="text" id="textarea" placeholder="How are You?"></textarea>
 
-        <p>Select Language 🎙️</p>
+        <p id="newTranslation">Select Language 🎙️</p>
 
-        <section class="radio-container">
+        <section class="radio-container" id="display-airesponse">
                 <label for="urdu"> 
                     <input type="radio" name="radio" id="urdu">
                     <span class="lang-text">URDU</span>
@@ -50,7 +50,11 @@
                 </label>
         </section>
         <button id="translate">Translate</button>
+
+        <p id="aiResponse" class="aiResponse"></p>
     </main>
+
+    
 
     <script src="./index.js" type="module"></script>
 </body>

@@ -1,32 +1,31 @@
 import {GoogleGenAI} from "@google/genai";
 
 export async function handler(e, context) {
-  try{
+  if (e.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: "Method Not Allowed" }),
+    };
+  }
+
+  try {
     const {prompt} = JSON.parse(e.body)
     const genai = new GoogleGenAI({
-    apiKey: process.env.PollyGlot_GENAI_KEY
+      apiKey: process.env.PollyGlot_GENAI_KEY
     })
     const response = await genai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: prompt
-    }) 
-    return{
+    })
+    return {
       statusCode: 200,
       body: JSON.stringify({text: response.text}),
     }
-
-  }catch(err) {
+  } catch(err) {
     console.error(err)
-    return{
+    return {
       statusCode: 500,
       body: JSON.stringify({error: "SOMETHING WENT WRONG!"})
     }
   }
-}
-
-if (e.httpMethod !== "POST") {
-    return {
-        statusCode: 405,
-        body: JSON.stringify({ error: "Method Not Allowed" }),
-    };
 }
