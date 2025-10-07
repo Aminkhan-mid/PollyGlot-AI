@@ -1,7 +1,7 @@
-import {GoogleGenerativeAI} from "@google/generative-ai";
+import OpenAI from "@google/generative-ai";
 
-export async function handler(e, context) {
-  if (e.httpMethod !== "POST") {
+export async function handler(event) {
+  if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
       body: JSON.stringify({ error: "Method Not Allowed" }),
@@ -9,22 +9,24 @@ export async function handler(e, context) {
   }
 
   try {
-    const {prompt} = JSON.parse(e.body)
-    const genAI = new GoogleGenerativeAI(process.env.PollyGlot_GENAI_KEY)
-    const model = genAI.getGenerativeModel({model: "gemini-2.0-flash"})
+    const { prompt } = JSON.parse(event.body);
 
-    const results = await model.generateContent(prompt)
-    const text = results.text()
+    const client = new OpenAI({ apiKey: process.env.POLLYGLOT_GENAI_KEY });
+
+    const response = await client.responses.create({
+      model: "gemini-2.5-flash",
+      input: prompt
+    });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({text}),
-    }
-  } catch(err) {
-    console.error(err)
+      body: JSON.stringify({ text: response.output_text }),
+    };
+  } catch (err) {
+    console.error(err);
     return {
       statusCode: 500,
-      body: JSON.stringify({error: err.message || "SOMETHING WENT WRONG!"})
-    }
+      body: JSON.stringify({ error: err.message || "Something went wrong!" }),
+    };
   }
 }
