@@ -123,8 +123,11 @@ button{
 .aiResponse{
     width: 90%;
     max-width: 317px;
-    height: 118px;
-    display: block;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     padding: 1em;
     resize: none;
@@ -133,4 +136,9 @@ button{
     background-color: #eff0f4;
     font-size: 1rem;
     color: black;
+}
+
+svg{
+    width: 50px;
+    height: 50px;
 }

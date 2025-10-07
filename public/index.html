@@ -9,10 +9,18 @@
      <link href="https://fonts.cdnfonts.com/css/big-shoulders-text" rel="stylesheet">
      <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
      <!-- FAVICONS LINK -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="./favicon_io/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' data:;
+        font-src 'self' https://fonts.cdnfonts.com;
+        style-src 'self' 'unsafe-inline' https://fonts.cdnfonts.com;
+    ">
+
 </head>
 <body>
     <header>
@@ -28,9 +36,9 @@
 
         <textarea name="text" id="textarea" placeholder="How are You?"></textarea>
 
-        <p id="newTranslation">Select Language 🎙️</p>
-
-        <section class="radio-container" id="display-airesponse">
+        <div class="occurChange" id="occurChange">
+            <p id="newTranslation">Select Language 🎙️</p>
+            <section class="radio-container" id="display-airesponse">
                 <label for="urdu"> 
                     <input type="radio" name="radio" id="urdu">
                     <span class="lang-text">URDU</span>
@@ -48,10 +56,12 @@
                     <span class="lang-text">JAPANESE</span>
                     <img class="country-flag" src="./images/japan.png" alt="Japan">
                 </label>
-        </section>
-        <button id="translate">Translate</button>
+            </section>
+            <button id="translate">Translate</button>
+        </div>
 
-        <p id="aiResponse" class="aiResponse"></p>
+
+        
     </main>
 
     
